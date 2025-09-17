@@ -12,12 +12,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
 public class ProductController {
     @Autowired
     ProductsService service;
+
+    public String sayHello(){
+        return "Hello from Product Controller";
+    }
+
+    @GetMapping("/hello")
+    public String hello(){
+        return sayHello();
+    }
+    
 
     @GetMapping("/demo")
     public String getProducts(){
